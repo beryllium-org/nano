@@ -12,7 +12,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
             try:
                 if not vr("savee"):
                     term.buf[1] = vr("dataa")[vr("cl")]
-                    term.move(x=vr("cl") - vr("vl") + 2, y=len(term.buf[1]))
+                    term.move(y=vr("cl") - vr("vl") + 2, x=len(term.buf[1]))
                     term.clear_line()
                 be.io.ledset(1)
                 term.hold_stdout = False
@@ -29,7 +29,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                     if not vr("savee"):
                         term.buf[1] = ""
                         term.focus = 0
-                        term.move(x=vr("sizee")[0] - 2)
+                        term.move(y=vr("sizee")[0] - 2)
                         vr("spsz", (vr("sizee")[1] - 21) * " ")
                         term.write(
                             "{}Save modified buffer?{}{}".format(
@@ -48,7 +48,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                 colors.uninverse,
                             )
                         )
-                        term.move(x=vr("sizee")[0] - 2, y=23)
+                        term.move(y=vr("sizee")[0] - 2, y=23)
                         term.nwrite(colors.inverse)
                         vrd("spsz")
                         vrp("savee")
@@ -74,7 +74,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                         for pv[get_pid()]["i"] in range(
                             2, vr("sizee")[0] - 2
                         ):  # shift data
-                            term.move(x=vr("i"))
+                            term.move(y=vr("i"))
                             term.clear_line()
                             term.nwrite(vr("dataa")[vr("vl") + vr("i") - 2])
 
@@ -88,7 +88,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                             for pv[get_pid()]["i"] in range(
                                 2, vr("sizee")[0] - 2
                             ):  # shift data
-                                term.move(x=vr("i"), y=0)
+                                term.move(y=vr("i"), x=0)
                                 term.clear_line()
                                 term.nwrite(vr("dataa")[vr("vl") + vr("i") - 2])
 
@@ -134,7 +134,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                         )
 
                         for pv[get_pid()]["i"] in range(0, vr("tf")):
-                            term.move(x=vr("i") + 2)
+                            term.move(y=vr("i") + 2)
                             term.clear_line()
                             term.nwrite(vr("dataa")[vr("vl") + vr("i")])
                         vrd("i")
@@ -149,17 +149,17 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                             vrp("savee")  # 2
 
                             # the "choose file name" prompt
-                            term.move(x=vr("sizee")[0] - 2)
+                            term.move(y=vr("sizee")[0] - 2)
 
                             # show the file name suggested
                             term.clear_line()
                             term.nwrite(
                                 "File name to write:" + (" " * (vr("sizee")[1] - 19))
                             )
-                            term.move(x=vr("sizee")[0] - 1)
+                            term.move(y=vr("sizee")[0] - 1)
                             term.nwrite(colors.endc)
                             term.clear_line()
-                            term.move(x=vr("sizee")[0])
+                            term.move(y=vr("sizee")[0])
                             term.clear_line()
                             term.nwrite(f"{colors.inverse}^C{colors.uninverse} Cancel")
                             vr("ffname", "")
@@ -167,7 +167,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                 vr("ffname", be.based.user_vars["argj"].split()[1])
                             except IndexError:
                                 pass
-                            term.move(x=vr("sizee")[0] - 2, y=21)
+                            term.move(y=vr("sizee")[0] - 2, x=21)
                             term.nwrite(colors.inverse)
                             term.buf[1] = vr("ffname")
                             term.focus = 0
@@ -203,11 +203,11 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                     "nbottxt",
                                     '[ Failed to save "' + term.buf[1] + '" ]',
                                 )
-                                term.move(x=vr("sizee")[0] - 2)
+                                term.move(y=vr("sizee")[0] - 2)
                                 term.clear_line()
                                 term.move(
-                                    x=vr("sizee")[0] - 2,
-                                    y=int((vr("sizee")[1] - len(vr("nbottxt"))) / 2),
+                                    y=vr("sizee")[0] - 2,
+                                    x=int((vr("sizee")[1] - len(vr("nbottxt"))) / 2),
                                 )
                                 term.nwrite(
                                     colors.inverse + vr("nbottxt") + colors.uninverse
@@ -216,15 +216,15 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                 vr("savee", 0)
                                 term.buf[1] = ""
                                 term.focus = 0
-                                term.move(x=vr("sizee")[0] - 1)
+                                term.move(y=vr("sizee")[0] - 1)
                                 term.nwrite(vr("toolbar_txt"))
 
                 elif term.buf[0] is 0 and vr("savee"):  # Ctrl C, abort saving
                     vr("savee", 0)
                     term.focus = 0
-                    term.move(x=vr("sizee")[0] - 2)
+                    term.move(y=vr("sizee")[0] - 2)
                     term.nwrite(colors.endc + (" " * vr("sizee")[1]))
-                    term.move(x=vr("sizee")[0] - 1)
+                    term.move(y=vr("sizee")[0] - 1)
                     term.nwrite(vr("toolbar_txt"))
 
                 elif term.buf[0] is 11:  # backspace
@@ -273,14 +273,14 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                 # we have at least one empty from the weltext
                                 vr("td", True)  # need to clear_line after line prints
                         for pv[get_pid()]["i"] in range(0, vr("tf")):
-                            term.move(x=vr("i") + 2)
+                            term.move(y=vr("i") + 2)
                             term.clear_line()
                             try:
                                 term.nwrite(vr("dataa")[vr("vl") + vr("i")])
                             except IndexError:  # Does not account for scroll well
                                 pass
                         if vr("td"):
-                            term.move(x=vr("tf") + 2)
+                            term.move(y=vr("tf") + 2)
                             term.clear_line()
                         vrd("td")
                         vrd("tf")

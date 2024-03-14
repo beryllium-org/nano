@@ -158,7 +158,7 @@ term.hold_stdout = True
 term.clear()
 term.nwrite(vr("toptxt"))
 vrd("toptxt")  # not gonna use it again
-term.move(x=vr("sizee")[0] - 2, y=vr("bottxt_offs"))
+term.move(y=vr("sizee")[0] - 2, x=vr("bottxt_offs"))
 term.nwrite(vr("bottxt"))
 vrd("bottxt")
 vrd("bottxt_offs")
@@ -170,7 +170,7 @@ if len(vr("dataa")) > 1:
     vrd("sz")
     vrd("ld")
     for pv[get_pid()]["i"] in range(0, vr("ltd")):
-        term.move(x=vr("i") + 2)
+        term.move(y=vr("i") + 2)
         term.nwrite(vr("dataa")[vr("i")])
     vrd("ltd")
 term.hold_stdout = False
