@@ -48,7 +48,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                 colors.uninverse,
                             )
                         )
-                        term.move(y=vr("sizee")[0] - 2, y=23)
+                        term.move(y=vr("sizee")[0] - 2, x=23)
                         term.nwrite(colors.inverse)
                         vrd("spsz")
                         vrp("savee")
