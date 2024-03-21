@@ -10,7 +10,7 @@ except IndexError:
     pass
 
 if vr("filee") is not None:  # there is arg
-    vr("exists", be.api.isdir(vr("filee")))
+    vr("exists", be.api.fs.isdir(vr("filee")))
 
 if vr("exists") == 1:  # it is dir
     vr(
