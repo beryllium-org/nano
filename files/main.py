@@ -192,7 +192,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
                                 vr("cc", False)
                         vrd("cc")
                         vrd("cl1")
-                        with be.api.fopen(term.buf[1], "w") as pv[get_pid()]["f"]:
+                        with be.api.fs.open(term.buf[1], "w") as pv[get_pid()]["f"]:
                             if vr("f") is not None:
                                 for pv[get_pid()]["i"] in vr("dataa"):
                                     vr("f").write(vr("i") + "\n")

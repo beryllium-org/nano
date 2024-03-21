@@ -23,7 +23,7 @@ if vr("exists") == 1:  # it is dir
 vr("dataa", [""])
 vr("lc", 0)  # line count
 if vr("exists") is 0:  # is file
-    with be.api.fopen(vr("filee")) as pv[get_pid()]["f"]:
+    with be.api.fs.open(vr("filee")) as pv[get_pid()]["f"]:
         vr("ll", vr("f").readlines())
         vr("lines", [])
         for pv[get_pid()]["i"] in range(0, len(vr("ll"))):
