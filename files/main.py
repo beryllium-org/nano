@@ -2,7 +2,9 @@ rename_process("nano")
 gc.collect()
 gc.collect()
 be.io.ledset(1)  # we don't want to pretend activity
+term.write("Running terminal detection.\nIf you get stuck here, try pressing enter")
 vr("sizee", term.detect_size(3))
+term.write("Detected: " + str(vr("sizee")))
 if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
     gc.collect()
     vr("ok", False)
