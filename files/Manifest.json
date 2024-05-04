@@ -1,7 +1,7 @@
 {
     "JPKG_minimum_version": 2,
     "package_name": "nano",
-    "version": [1, 9, 4],
+    "version": [1, 9, 5],
     "dependencies": [],
     "conflicts": [],
     "install": "installer.py",
@@ -9,4 +9,4 @@
     "update": "installer.py",
     "strap": "strap.py",
     "restart_required": false
-} 
+}
