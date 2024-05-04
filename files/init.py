@@ -2,7 +2,7 @@ vr("filee", None)
 vr("exists", 2)
 vr("weltxt", "[ Welcome to nano.  For basic help, type Ctrl+G. ]")
 
-vr("versionn", "1.9.4")
+vr("versionn", "1.9.5")
 
 try:
     vr("filee", be.based.user_vars["argj"].split()[1])

@@ -4,5 +4,5 @@ try:
     mkdir(path.join(root, "bin/nano"))
 except FileExistsError:
     pass
-for i in ["init.py", "main.py"]:
+for i in ["init.py", "main.py", "loop.py"]:
     shutil.copy(i, path.join(root, "bin/nano", i))
