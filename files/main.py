@@ -28,7 +28,7 @@ if vr("sizee") != False and (vr("sizee")[0] > 14 and vr("sizee")[1] > 105):
     else:
         term.write("Failed to initialize nano!")
 else:
-    be.based.error(13, "15x106")  # minimum size error
+    term.write("Terminal too small, minimum size: 15x106")
     be.api.setvar("return", "1")
 term.hold_stdout = False
 term.flush_writes()
